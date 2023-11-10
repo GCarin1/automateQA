@@ -1,0 +1,39 @@
+
+name: CI
+
+
+on:
+
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: unbuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo hello, world!
+
+  deploy-dev:
+    runs-on: ubunto-latest
+    environment:
+      name: dev
+      url: ''
+    needs: build
+    steps:
+      - name: Run a one-line script
+        run: echo Deploy Dev
+
+  deploy-pdr:
+    runs-on: ubunto-latest
+    environment:
+      name: pdr
+      url: ''
+    needs: [deploy-dev]
+    steps:
+      - name: Run a one-line script
+        run: echo Deploy Pdr
+      
