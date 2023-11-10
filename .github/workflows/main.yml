@@ -21,7 +21,7 @@ jobs:
     runs-on: ubunto-latest
     environment:
       name: dev
-      url: ''
+      url: 'test.com.br'
     needs: build
     steps:
       - name: Run a one-line script
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubunto-latest
     environment:
       name: pdr
-      url: ''
+      url: 'test.com.br'
     needs: [deploy-dev]
     steps:
       - name: Run a one-line script
