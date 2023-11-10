@@ -28,7 +28,7 @@ jobs:
         run: echo Deploy Dev
 
   deploy-pdr:
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
     environment:
       name: pdr
       url: 'test.com.br'
