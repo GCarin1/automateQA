@@ -4,6 +4,8 @@ from behave import *
 import yaml
 import os
 from datetime import datetime
+from webdriver_manager.chrome import ChromeDriverManager
+from behave import fixture
 
 def before_all(context):
     # Carregue as variáveis do arquivo YAML
@@ -38,10 +40,14 @@ def before_scenario(context, scenario):
         context.browser.delete_all_cookies()
         context.browser.maximize_window()
     else:
-        service = Service('drivers\chromedriver.exe')
-        context.browser = webdriver.Chrome(service=service)
+        context.browser = webdriver.Chrome(executable_path=ChromeDriverManager().install())
         context.browser.delete_all_cookies()
         context.browser.maximize_window()
+    # else:
+    #     service = Service('drivers\chromedriver.exe')
+    #     context.browser = webdriver.Chrome(service=service)
+    #     context.browser.delete_all_cookies()
+    #     context.browser.maximize_window()
 
 def after_step(context, step):
     # Tire um screenshot após cada step, independentemente de passar ou falhar

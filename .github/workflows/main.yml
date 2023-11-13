@@ -26,10 +26,6 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y google-chrome-stable
-        sudo apt-get install -y chromium-chromedriver
-
-    - name: Install WebDriver Manager
-      run: |
         pip install webdriver_manager
 
     - name: Set up secrets as environment variables
