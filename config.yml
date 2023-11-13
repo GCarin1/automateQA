@@ -1,0 +1,6 @@
+#url secreta
+# config.yaml
+
+url: ${URL}
+password: ${PASSWORD}
+user01: ${USER01}
