@@ -30,4 +30,5 @@ jobs:
 
     - name: Run Behave tests
       run: |
-        behave .\features\teste.feature
+        behave ./features/teste.feature
+
