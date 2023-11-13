@@ -1,0 +1,7 @@
+#path features
+default:
+  paths: ['./features']
+
+tag1:
+  tags: '@tag1'
+  paths: ['./features']

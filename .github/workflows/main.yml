@@ -1,39 +1,28 @@
-
-name: CI
-
+name: Run Behave Tests
 
 on:
-
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
-  workflow_dispatch:
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    steps:
-      - name: Run a one-line script
-        run: echo hello, world!
 
-  deploy-dev:
-    runs-on: ubuntu-latest
-    environment:
-      name: dev
-      url: 'test.com.br'
-    needs: build
     steps:
-      - name: Run a one-line script
-        run: echo Deploy Dev
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-  deploy-pdr:
-    runs-on: ubuntu-latest
-    environment:
-      name: pdr
-      url: 'test.com.br'
-    needs: [deploy-dev]
-    steps:
-      - name: Run a one-line script
-        run: echo Deploy Pdr
-      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run Behave tests
+      run: |
+        behave -i @sua_tag
+  
