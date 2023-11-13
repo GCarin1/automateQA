@@ -1,6 +1,6 @@
 Feature: teste
 
-    @tag1
+    @Tag1
     Scenario: teste
         Given que eu esteja na pagina
         When faco login usando o documento 

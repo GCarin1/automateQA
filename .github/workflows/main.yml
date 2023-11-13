@@ -30,4 +30,4 @@ jobs:
 
     - name: Run Behave tests
       run: |
-        behave -i @tag1
+        behave feature/teste.feature
