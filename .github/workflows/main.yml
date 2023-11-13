@@ -22,7 +22,12 @@ jobs:
       run: |
         pip install -r requirements.txt
 
+    - name: Set up secrets as environment variables
+      run: |
+        export URL="${{ secrets.URL }}"
+        export PASSWORD="${{ secrets.PASSWORD }}"
+        export USER01="${{ secrets.USER01 }}"
+
     - name: Run Behave tests
       run: |
-        behave -i @sua_tag
-  
+        behave -i @tag1
