@@ -162,5 +162,3 @@ cython_debug/
 config.yml
 browserstack.yml
 mapeamento.py
-
-images/*
