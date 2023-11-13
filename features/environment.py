@@ -40,10 +40,9 @@ def before_scenario(context, scenario):
         context.browser.delete_all_cookies()
         context.browser.maximize_window()
     else:
-        context.browser = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+        context.browser = webdriver.Chrome(ChromeDriverManager().install())
         context.browser.delete_all_cookies()
         context.browser.maximize_window()
-    # else:
     #     service = Service('drivers\chromedriver.exe')
     #     context.browser = webdriver.Chrome(service=service)
     #     context.browser.delete_all_cookies()
