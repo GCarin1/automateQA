@@ -4,20 +4,144 @@
   "framework_version": "0.17.0",
   "last_updated": "2026-09-27",
   "artifacts": {
-    "entrypoint": {
-      "path": "AGENTS.md"
-    },
     "product": {
       "path": ".doctrina/product.md",
       "status": "active",
       "version": "0.1.0",
       "last_updated": "2026-09-27"
     },
-    "specs": [],
-    "decisions": [],
+    "specs": [
+      {
+        "id": "ci-pipeline",
+        "path": ".doctrina/specs/ci-pipeline/spec.md",
+        "status": "draft",
+        "version": "0.1.0",
+        "last_updated": "2026-09-27",
+        "implementation": "planned",
+        "realizes": [
+          "SC5",
+          "SC4"
+        ],
+        "depends_on": [
+          "execution-reporting",
+          "configuration"
+        ]
+      },
+      {
+        "id": "configuration",
+        "path": ".doctrina/specs/configuration/spec.md",
+        "status": "draft",
+        "version": "0.1.0",
+        "last_updated": "2026-09-27",
+        "implementation": "planned",
+        "realizes": [
+          "SC3",
+          "SC4"
+        ],
+        "depends_on": [
+          "project-structure"
+        ]
+      },
+      {
+        "id": "example-sut",
+        "path": ".doctrina/specs/example-sut/spec.md",
+        "status": "draft",
+        "version": "0.1.0",
+        "last_updated": "2026-09-27",
+        "implementation": "planned",
+        "realizes": [
+          "SC1",
+          "SC3"
+        ],
+        "depends_on": [
+          "project-structure",
+          "test-authoring"
+        ]
+      },
+      {
+        "id": "execution-reporting",
+        "path": ".doctrina/specs/execution-reporting/spec.md",
+        "status": "draft",
+        "version": "0.1.0",
+        "last_updated": "2026-09-27",
+        "implementation": "planned",
+        "realizes": [
+          "SC1",
+          "SC6"
+        ],
+        "depends_on": [
+          "configuration",
+          "project-structure"
+        ]
+      },
+      {
+        "id": "project-structure",
+        "path": ".doctrina/specs/project-structure/spec.md",
+        "status": "draft",
+        "version": "0.1.0",
+        "last_updated": "2026-09-27",
+        "implementation": "planned",
+        "realizes": [
+          "SC2",
+          "SC3"
+        ]
+      },
+      {
+        "id": "test-authoring",
+        "path": ".doctrina/specs/test-authoring/spec.md",
+        "status": "draft",
+        "version": "0.1.0",
+        "last_updated": "2026-09-27",
+        "implementation": "planned",
+        "realizes": [
+          "SC2",
+          "SC3"
+        ],
+        "depends_on": [
+          "project-structure"
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "id": "0001",
+        "path": ".doctrina/decisions/0001-arquitetura-em-camadas-gtaa-com-page-component-objects-e-flows.md",
+        "title": "Arquitetura em camadas gTAA com Page/Component Objects e flows",
+        "status": "proposed",
+        "date": "2026-09-27",
+        "summary": "O template adota quatro camadas com dependência apenas para baixo:"
+      },
+      {
+        "id": "0002",
+        "path": ".doctrina/decisions/0002-pytest-playwright-como-runner-e-driver-padrao.md",
+        "title": "pytest + Playwright como runner e driver padrão",
+        "status": "proposed",
+        "date": "2026-09-27",
+        "summary": "Proposto: pytest como runner (fixtures, marcadores, plugins de relatório,"
+      },
+      {
+        "id": "0003",
+        "path": ".doctrina/decisions/0003-bdd-gherkin-como-modulo-opcional-nao-como-padrao.md",
+        "title": "BDD/Gherkin como módulo opcional, não como padrão",
+        "status": "proposed",
+        "date": "2026-09-27",
+        "summary": "Proposto: o caminho padrão é teste pytest em Python (AAA) chamando"
+      },
+      {
+        "id": "0004",
+        "path": ".doctrina/decisions/0004-codigo-em-ingles-documentacao-em-portugues.md",
+        "title": "Código em inglês, documentação em português",
+        "status": "proposed",
+        "date": "2026-09-27",
+        "summary": "Proposto: identificadores, nomes de arquivos, marcadores e mensagens de"
+      }
+    ],
     "changes": [],
     "changes_archive": [],
     "skills": [],
-    "contracts": []
+    "contracts": [],
+    "entrypoint": {
+      "path": "AGENTS.md"
+    }
   }
 }

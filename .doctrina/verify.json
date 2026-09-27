@@ -1,0 +1,17 @@
+{
+  "$comment": "doctrina verify runs each check below, in order, through your shell. Replace the example with your real typecheck/test/build commands. A non-zero exit fails the gate. This file is the project's executable definition of 'the code actually works'. A check may add an \"expect\" block — {\"fail_if_output_matches\": \"<regex>\"} and/or {\"require_output_matches\": \"<regex>\"} — so that a run which exits 0 having executed NOTHING fails the gate instead of passing it.",
+  "checks": [
+    {
+      "name": "lint",
+      "run": "ruff check ."
+    },
+    {
+      "name": "tests",
+      "run": "pytest",
+      "expect": {
+        "fail_if_output_matches": "no tests ran",
+        "require_output_matches": "\\d+ passed"
+      }
+    }
+  ]
+}
