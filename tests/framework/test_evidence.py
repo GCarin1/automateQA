@@ -1,7 +1,13 @@
 """A failing UI test must leave a screenshot and a trace behind."""
 
+import os
+
 import pytest
 from _source import ROOT
+
+# pytester points HOME at a temporary folder; Playwright looks for its
+# browsers under HOME, so the subprocess must get the real one back.
+REAL_HOME = os.environ.get("HOME", "")
 
 FAILING_TEST = """
 def test_deliberately_failing_login_leaves_evidence(auth_flow, valid_user):
@@ -13,6 +19,7 @@ def test_deliberately_failing_login_leaves_evidence(auth_flow, valid_user):
 @pytest.fixture
 def isolated_run(pytester, monkeypatch):
     monkeypatch.setenv("PYTHONPATH", str(ROOT))
+    monkeypatch.setenv("HOME", REAL_HOME)
     monkeypatch.setenv("TEST_ENV", "local")
     monkeypatch.setenv("SERVE_DIR", str(ROOT / "demo_app"))
     pytester.makepyfile(test_failing=FAILING_TEST)
