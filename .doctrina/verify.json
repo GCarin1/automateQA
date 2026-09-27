@@ -3,11 +3,11 @@
   "checks": [
     {
       "name": "lint",
-      "run": "ruff check ."
+      "run": "ruff check . && ruff format --check ."
     },
     {
       "name": "tests",
-      "run": "pytest",
+      "run": "pytest -p no:cacheprovider",
       "expect": {
         "fail_if_output_matches": "no tests ran",
         "require_output_matches": "\\d+ passed"

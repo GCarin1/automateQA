@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo App — Sign in</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Sign in</h1>
+    <form id="login-form" data-testid="login-form" novalidate>
+      <label for="username">Username</label>
+      <input id="username" name="username" autocomplete="username" required>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <button type="submit">Sign in</button>
+      <p class="error" role="alert" data-testid="login-error" hidden></p>
+    </form>
+    <p class="hint">Demo system under test of automateQA. Nothing here is real.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

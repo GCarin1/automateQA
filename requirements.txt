@@ -1,5 +1,10 @@
-selenium
-behave
-browserstack-sdk
-webdriver_manager==3.5.0
-
+# Runner e driver (ADR 0002)
+pytest>=8.3
+pytest-playwright>=0.7
+playwright>=1.56
+# Relatórios, ordem aleatória e configuração
+pytest-html>=4.1
+pytest-randomly>=3.16
+python-dotenv>=1.0
+# Lint e formatação
+ruff>=0.8

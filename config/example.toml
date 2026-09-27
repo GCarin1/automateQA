@@ -1,0 +1,5 @@
+# Template for a real environment: copy to config/<env>.toml and run with
+# TEST_ENV=<env>. Keep secrets out of this file; export them instead
+# (see .env.example).
+base_url = "https://app.example.com"
+timeout_ms = 10000

@@ -1,6 +1,6 @@
 # ADR 0002 — pytest + Playwright como runner e driver padrão
 
-- **Status:** proposed
+- **Status:** accepted
 - **Date:** 2026-09-27
 - **Deciders:** dono do repositório (GCarin1) — pendente de discussão
 - **Supersedes:** —

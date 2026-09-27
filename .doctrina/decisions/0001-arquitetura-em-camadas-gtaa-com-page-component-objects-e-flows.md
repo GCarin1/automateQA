@@ -1,6 +1,6 @@
 # ADR 0001 — Arquitetura em camadas gTAA com Page/Component Objects e flows
 
-- **Status:** proposed
+- **Status:** rejected
 - **Date:** 2026-09-27
 - **Deciders:** dono do repositório (GCarin1)
 - **Supersedes:** —

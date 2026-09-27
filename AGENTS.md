@@ -6,7 +6,8 @@ artifacts live under `.doctrina/`.
 
 ## What this repo is
 
-template de automação de testes, padrõnização de criação de testes automatizados
+Template de automação de testes web em Python: um padrão de estrutura e
+escrita de testes adotável por qualquer time. Código em inglês, docs em pt-BR (ADR 0004).
 
 ## Working from intent (you drive; the human stays passive)
 
@@ -75,25 +76,25 @@ canonical templates and syncs `index.json`. Flags: `doctrina <cmd> --help`.
 
 ## Stack and tooling
 
-<!-- Replace with the project's actual stack. Keep this section short. -->
-- Runtime:
-- Package manager:
-- Test runner:
-- Linter / formatter:
+- Runtime: Python 3.11+ (ADR 0002)
+- Package manager: pip (`requirements.txt`; config in `pyproject.toml`)
+- Test runner: pytest + pytest-playwright, pytest-html, pytest-randomly
+- Linter / formatter: ruff (`ruff check`, `ruff format`)
 
 ## Commands
 
-<!-- Use exact, copy-pasteable commands. Avoid prose. -->
 ```
-# install
-# build
-# test
-# lint
+pip install -r requirements.txt && python -m playwright install chromium  # install
+pytest                                    # test (framework checks + e2e)
+ruff check . && ruff format --check .     # lint
 ```
 
 ## Repository structure
 
-<!-- Outline the top-level directories an agent needs to know about. -->
+Tri-Layer of ISTQB CTAL-TAE v2.0 (ADR 0005); dependencies point down only:
+`tests/e2e/` test scripts → `business/` (pages, flows, data, fixtures) →
+`core/` (SUT-independent). `tests/framework/` self-checks the rules;
+`demo_app/` is the demo SUT; `config/<env>.toml` holds non-secret settings.
 
 ## Conventions and boundaries
 

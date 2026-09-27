@@ -1,6 +1,6 @@
 # ADR 0004 — Código em inglês, documentação em português
 
-- **Status:** proposed
+- **Status:** accepted
 - **Date:** 2026-09-27
 - **Deciders:** dono do repositório (GCarin1) — pendente de discussão
 - **Supersedes:** —

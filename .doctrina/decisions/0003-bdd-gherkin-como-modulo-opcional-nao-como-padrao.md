@@ -1,6 +1,6 @@
 # ADR 0003 — BDD/Gherkin como módulo opcional, não como padrão
 
-- **Status:** proposed
+- **Status:** accepted
 - **Date:** 2026-09-27
 - **Deciders:** dono do repositório (GCarin1) — pendente de discussão
 - **Supersedes:** —

@@ -1,0 +1,8 @@
+# Local environment: serves the demo SUT from demo_app/ on a free port.
+# Credentials below are fake ones accepted only by the demo SUT.
+# For a real system create config/<env>.toml without secrets and export
+# TEST_ENV=<env>, BASE_URL, TEST_USER_NAME and TEST_USER_PASSWORD.
+serve_dir = "demo_app"
+timeout_ms = 5000
+user_name = "demo"
+user_password = "demo-password"

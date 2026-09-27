@@ -1,0 +1,8 @@
+:root { font-family: system-ui, sans-serif; color: #1f2933; background: #f5f7fa; }
+body { display: grid; place-items: center; min-height: 100vh; margin: 0; }
+.card { background: #fff; padding: 2rem; border-radius: 8px; width: min(360px, 90vw); box-shadow: 0 2px 8px rgb(0 0 0 / 10%); }
+form { display: grid; gap: 0.5rem; }
+input, button { font: inherit; padding: 0.5rem; }
+button { cursor: pointer; background: #2563eb; color: #fff; border: 0; border-radius: 4px; }
+.error { color: #b91c1c; margin: 0; }
+.hint { font-size: 0.8rem; color: #616e7c; }

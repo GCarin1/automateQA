@@ -9,7 +9,7 @@
 
 ## Purpose
 
-Define the layered folder layout of the template and the single responsibility of each folder, mapped to the layers of the ISTQB generic Test Automation Architecture (gTAA): test definition (tests), business flows, test adaptation (pages/components) and a core that wraps the automation driver. The layout is what adopters copy; it must be obvious, documented and enforced.
+Define the layered folder layout of the template and the single responsibility of each folder, following the test automation framework layers of ISTQB CTAL-TAE v2.0 §3.1.3 (ADR 0005): test scripts, business logic (page objects and the flow model of §3.1.5) and core libraries independent of the system under test. The layout is what adopters copy; it must be obvious, documented and enforced.
 
 ## Requirements (EARS)
 
@@ -43,12 +43,12 @@ Define the layered folder layout of the template and the single responsibility o
 
 **MVP (committed):**
 
-- Four-layer layout, README folder table, import-direction check.
+- Three-layer layout (`tests/e2e/`, `business/`, `core/`), README folder table, automated layer checks.
 
 **Future (aspirational, not committed):**
 
 - Cookiecutter/Copier generator that scaffolds the layout into an empty repository.
-- Additional layers for API (`clients/`) and mobile.
+- `business/components/` for widgets reused across pages, and adapters for API (`business/clients/`) and mobile.
 
 ## Out of scope for this spec
 

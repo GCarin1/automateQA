@@ -1,0 +1,30 @@
+# Tool configuration only: automateQA is a template, not an installable package.
+
+[tool.pytest.ini_options]
+minversion = "8.3"
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "smoke: fast checks of the critical path",
+    "regression: full functional coverage",
+]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "-ra",
+    "--output=artifacts/test-results",
+    "--screenshot=only-on-failure",
+    "--tracing=retain-on-failure",
+    "--junitxml=artifacts/junit.xml",
+    "--html=artifacts/report.html",
+    "--self-contained-html",
+]
+junit_family = "xunit2"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [".doctrina"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "PT", "N", "A"]

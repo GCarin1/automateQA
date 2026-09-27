@@ -107,7 +107,7 @@
         "id": "0001",
         "path": ".doctrina/decisions/0001-arquitetura-em-camadas-gtaa-com-page-component-objects-e-flows.md",
         "title": "Arquitetura em camadas gTAA com Page/Component Objects e flows",
-        "status": "proposed",
+        "status": "rejected",
         "date": "2026-09-27",
         "summary": "O template adota quatro camadas com dependência apenas para baixo:"
       },
@@ -115,7 +115,7 @@
         "id": "0002",
         "path": ".doctrina/decisions/0002-pytest-playwright-como-runner-e-driver-padrao.md",
         "title": "pytest + Playwright como runner e driver padrão",
-        "status": "proposed",
+        "status": "accepted",
         "date": "2026-09-27",
         "summary": "Proposto: pytest como runner (fixtures, marcadores, plugins de relatório,"
       },
@@ -123,7 +123,7 @@
         "id": "0003",
         "path": ".doctrina/decisions/0003-bdd-gherkin-como-modulo-opcional-nao-como-padrao.md",
         "title": "BDD/Gherkin como módulo opcional, não como padrão",
-        "status": "proposed",
+        "status": "accepted",
         "date": "2026-09-27",
         "summary": "Proposto: o caminho padrão é teste pytest em Python (AAA) chamando"
       },
@@ -131,12 +131,29 @@
         "id": "0004",
         "path": ".doctrina/decisions/0004-codigo-em-ingles-documentacao-em-portugues.md",
         "title": "Código em inglês, documentação em português",
-        "status": "proposed",
+        "status": "accepted",
         "date": "2026-09-27",
         "summary": "Proposto: identificadores, nomes de arquivos, marcadores e mensagens de"
+      },
+      {
+        "id": "0005",
+        "path": ".doctrina/decisions/0005-arquitetura-tri-layer-do-istqb-ctal-tae-v2-0-com-page-object-e-flow-model.md",
+        "title": "Arquitetura Tri-Layer do ISTQB CTAL-TAE v2.0 com Page Object e Flow Model",
+        "status": "accepted",
+        "date": "2026-09-27",
+        "summary": "O template adota as três camadas do TAF do CTAL-TAE v2.0, com dependência"
       }
     ],
-    "changes": [],
+    "changes": [
+      {
+        "id": "0001-walking-skeleton-tri-layer",
+        "title": "walking skeleton tri-layer",
+        "path": ".doctrina/changes/0001-walking-skeleton-tri-layer",
+        "status": "proposed",
+        "opened": "2026-09-27",
+        "lane": "runtime (confident; signals: ci, configuracao) — opened anyway (--force)"
+      }
+    ],
     "changes_archive": [],
     "skills": [],
     "contracts": [],
