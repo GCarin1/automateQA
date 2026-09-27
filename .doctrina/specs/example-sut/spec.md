@@ -1,12 +1,12 @@
 # Spec — example-sut
 
 **Capability:** example-sut
-**Status:** draft
-**Implementation:** planned
+**Status:** active
+**Implementation:** verified — demo SUT and login suite (`tests/e2e/test_login.py`)
 **Realizes:** SC1, SC3
 **Depends on:** project-structure, test-authoring
 **Last updated:** 2026-09-27
-**Version:** 0.1.0
+**Version:** 0.2.0
 
 ## Purpose
 
@@ -30,8 +30,8 @@ Provide a small static HTML system under test inside the repository, plus an exa
 
 ## Acceptance criteria
 
-1. [unverified] The example suite passes on a clean clone with no network access beyond dependency installation — verified by `tests/e2e/test_login.py`.
-2. [unverified] The demo SUT is served by a session fixture and shut down after the session — verified by `tests/e2e/conftest.py`.
+1. [verified] The example suite passes against the locally served demo SUT with no network access beyond dependency installation — verified by `tests/e2e/test_login.py`.
+2. [verified] The demo SUT is served for the session and the server is shut down after use — verified by `tests/framework/test_static_server.py`.
 
 ## Maturity
 

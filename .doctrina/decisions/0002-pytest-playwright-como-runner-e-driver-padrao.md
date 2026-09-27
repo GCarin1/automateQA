@@ -6,7 +6,7 @@
 - **Supersedes:** —
 - **Superseded by:** —
 - **Evidence:** n/a — decisão ainda proposta
-- **Landed:** —
+- **Landed:** 2026-09-27 — `requirements.txt`, `core/plugin.py`, `tests/e2e/test_login.py`
 
 ## Context
 

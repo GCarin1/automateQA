@@ -1,6 +1,7 @@
 # Change 0001-walking-skeleton-tri-layer — walking skeleton tri-layer
 
-- **Status:** proposed
+- **Status:** applied
+- **Applied:** 2026-09-27
 - **Date:** 2026-09-27
 - **Owner:** GCarin1 (agente: Claude Code)
 - **Lane:** runtime (confident; signals: ci, configuracao) — opened anyway (--force)
@@ -62,7 +63,7 @@ unchecked (pass --force to archive anyway and record the gap). Distinguish
 -->
 
 - [x] Automated checks pass (`doctrina verify`, or the project's typecheck/test/build).
-- [ ] The affected spec's acceptance criteria are met and cite their evidence (`doctrina coverage`).
+- [x] The affected spec's acceptance criteria are met and cite their evidence (`doctrina coverage`).
 
 ## Open questions
 

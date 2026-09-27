@@ -1,12 +1,12 @@
 # Spec — configuration
 
 **Capability:** configuration
-**Status:** draft
-**Implementation:** planned
+**Status:** active
+**Implementation:** verified — settings loader (`tests/framework/test_settings.py`)
 **Realizes:** SC3, SC4
 **Depends on:** project-structure
 **Last updated:** 2026-09-27
-**Version:** 0.1.0
+**Version:** 0.2.0
 
 ## Purpose
 
@@ -26,7 +26,7 @@ Load run settings (base URL, browser, headless, timeouts) per environment, and r
 
 ### Unwanted-behavior (must-not)
 
-- The template shall not version any `.env` file, credential or real company URL.
+- The template shall not version any `.env` file, real credential or real company URL; the demo SUT's fake credentials in `config/local.toml` are test data, not secrets.
 - The template shall not print secret values in logs or reports.
 
 ### Optional
@@ -35,10 +35,12 @@ Load run settings (base URL, browser, headless, timeouts) per environment, and r
 
 ## Acceptance criteria
 
-1. [unverified] Running the suite with TEST_ENV unset targets the local example SUT — verified by `tests/unit/test_settings.py`.
-2. [unverified] An environment variable overrides the value from the environment file — verified by `tests/unit/test_settings.py`.
-3. [unverified] A missing required setting raises a configuration error naming the variable — verified by `tests/unit/test_settings.py`.
-4. [unverified] .gitignore excludes .env and a secret-scan step in CI finds no secrets — verified by `.github/workflows/tests.yml`.
+1. [verified] Loading settings with TEST_ENV unset targets the local demo SUT — verified by `tests/framework/test_settings.py`.
+2. [verified] An environment variable overrides the value from the environment file — verified by `tests/framework/test_settings.py`.
+3. [verified] A missing required setting raises a configuration error naming the variable — verified by `tests/framework/test_settings.py`.
+4. [verified] .gitignore excludes .env and run output, and no .env file is tracked — verified by `tests/framework/test_repository_hygiene.py`.
+5. [verified] The settings representation hides the password — verified by `tests/framework/test_settings.py`.
+6. [verified] The CI secret-scan step finds no secrets; observed in run 36293369635 — verified by `.github/workflows/tests.yml`.
 
 ## Maturity
 

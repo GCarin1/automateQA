@@ -6,7 +6,7 @@
 - **Supersedes:** —
 - **Superseded by:** —
 - **Evidence:** n/a — decisão ainda proposta
-- **Landed:** —
+- **Landed:** 2026-09-27 — `docs/writing-tests.md`
 
 ## Context
 

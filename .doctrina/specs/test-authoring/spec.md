@@ -1,12 +1,12 @@
 # Spec — test-authoring
 
 **Capability:** test-authoring
-**Status:** draft
-**Implementation:** planned
+**Status:** active
+**Implementation:** verified — rules R1–R10 (`docs/writing-tests.md`)
 **Realizes:** SC2, SC3
 **Depends on:** project-structure
 **Last updated:** 2026-09-27
-**Version:** 0.1.0
+**Version:** 0.2.0
 
 ## Purpose
 
@@ -18,9 +18,10 @@ Define how a test is written in the template so any two tests written by differe
 
 - Each test shall follow the Arrange-Act-Assert structure, and each test shall verify one behaviour.
 - Each test shall be named `test_<behaviour>_<expected_result>` and live in a module named after the feature it covers.
-- Page and component objects shall expose intention-revealing methods (for example `login(user)`) and return page objects or values, never raw driver elements.
+- Page objects shall expose intention-revealing methods (for example `sign_in(name, password)`) and return page objects or values, never raw driver elements.
 - Locators shall follow the priority: accessible role/label → test id attribute (`data-testid`) → CSS selector; XPath is allowed only with a comment justifying it.
 - Test data shall come from fixtures or factories, never from literals repeated across tests.
+- Assertions shall be made only in test scripts, on values returned by pages and flows.
 
 ### Event-driven
 
@@ -29,20 +30,22 @@ Define how a test is written in the template so any two tests written by differe
 
 ### Unwanted-behavior (must-not)
 
-- The template shall not use fixed sleeps (`time.sleep`) in tests, flows, pages or components.
+- The template shall not use fixed sleeps (`time.sleep`) in `core/`, `business/` or `tests/`.
 - The template shall not catch and silently discard exceptions raised by interactions.
 - A test shall not depend on the execution order or state left by another test.
 
 ### Optional
 
-- Where a team adopts BDD, the template may bind Gherkin feature files to the same flows through a BDD plugin, keeping step definitions free of locators.
+- Where a team adopts BDD, the template may bind Gherkin feature files to the same flows through pytest-bdd, keeping step definitions free of locators.
 
 ## Acceptance criteria
 
-1. [unverified] A static check fails the build when time.sleep appears under tests/, flows/, pages/, components/ or core/ — verified by `tests/architecture/test_conventions.py`.
-2. [unverified] A static check fails the build when a bare except: or an except Exception: pass appears in the template code — verified by `tests/architecture/test_conventions.py`.
-3. [unverified] The example suite runs green in random order — verified by `tests/e2e/test_login.py`.
-4. [unverified] A written guide docs/writing-tests.md documents every rule of this spec with a correct and an incorrect example — verified by `tests/architecture/test_docs.py`.
+1. [verified] A static check fails the build when a fixed sleep appears under core/, business/ or tests/ — verified by `tests/framework/test_conventions.py`.
+2. [verified] A static check fails the build when a bare except or an except block containing only pass appears in the template code — verified by `tests/framework/test_conventions.py`.
+3. [verified] The example suite runs green in random order — verified by `tests/e2e/test_login.py`.
+4. [verified] The guide docs/writing-tests.md documents rules R1 to R10, each with a correct and an incorrect example — verified by `tests/framework/test_docs.py`.
+5. [verified] A wait timeout raises an error that names the locator and the timeout — verified by `tests/framework/test_base_page.py`.
+6. [verified] A static check fails the build when a test name does not follow test_<behaviour>_<expected_result> — verified by `tests/framework/test_conventions.py`.
 
 ## Maturity
 

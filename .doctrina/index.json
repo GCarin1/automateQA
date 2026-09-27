@@ -14,10 +14,10 @@
       {
         "id": "ci-pipeline",
         "path": ".doctrina/specs/ci-pipeline/spec.md",
-        "status": "draft",
-        "version": "0.1.0",
+        "status": "active",
+        "version": "0.2.0",
         "last_updated": "2026-09-27",
-        "implementation": "planned",
+        "implementation": "verified — GitHub Actions runs 36293277897 (red, artifacts uploaded) and 36293369635 (green) (`.github/workflows/tests.yml`)",
         "realizes": [
           "SC5",
           "SC4"
@@ -30,10 +30,10 @@
       {
         "id": "configuration",
         "path": ".doctrina/specs/configuration/spec.md",
-        "status": "draft",
-        "version": "0.1.0",
+        "status": "active",
+        "version": "0.2.0",
         "last_updated": "2026-09-27",
-        "implementation": "planned",
+        "implementation": "verified — settings loader (`tests/framework/test_settings.py`)",
         "realizes": [
           "SC3",
           "SC4"
@@ -45,10 +45,10 @@
       {
         "id": "example-sut",
         "path": ".doctrina/specs/example-sut/spec.md",
-        "status": "draft",
-        "version": "0.1.0",
+        "status": "active",
+        "version": "0.2.0",
         "last_updated": "2026-09-27",
-        "implementation": "planned",
+        "implementation": "verified — demo SUT and login suite (`tests/e2e/test_login.py`)",
         "realizes": [
           "SC1",
           "SC3"
@@ -61,10 +61,10 @@
       {
         "id": "execution-reporting",
         "path": ".doctrina/specs/execution-reporting/spec.md",
-        "status": "draft",
-        "version": "0.1.0",
+        "status": "active",
+        "version": "0.2.0",
         "last_updated": "2026-09-27",
-        "implementation": "planned",
+        "implementation": "verified — pytest addopts (`pyproject.toml`)",
         "realizes": [
           "SC1",
           "SC6"
@@ -77,10 +77,10 @@
       {
         "id": "project-structure",
         "path": ".doctrina/specs/project-structure/spec.md",
-        "status": "draft",
-        "version": "0.1.0",
+        "status": "active",
+        "version": "0.2.0",
         "last_updated": "2026-09-27",
-        "implementation": "planned",
+        "implementation": "verified — tri-layer walking skeleton (`tests/framework/test_layers.py`)",
         "realizes": [
           "SC2",
           "SC3"
@@ -89,10 +89,10 @@
       {
         "id": "test-authoring",
         "path": ".doctrina/specs/test-authoring/spec.md",
-        "status": "draft",
-        "version": "0.1.0",
+        "status": "active",
+        "version": "0.2.0",
         "last_updated": "2026-09-27",
-        "implementation": "planned",
+        "implementation": "verified — rules R1–R10 (`docs/writing-tests.md`)",
         "realizes": [
           "SC2",
           "SC3"
@@ -117,6 +117,7 @@
         "title": "pytest + Playwright como runner e driver padrão",
         "status": "accepted",
         "date": "2026-09-27",
+        "landed": "2026-09-27 — `requirements.txt`, `core/plugin.py`, `tests/e2e/test_login.py`",
         "summary": "Proposto: pytest como runner (fixtures, marcadores, plugins de relatório,"
       },
       {
@@ -125,6 +126,7 @@
         "title": "BDD/Gherkin como módulo opcional, não como padrão",
         "status": "accepted",
         "date": "2026-09-27",
+        "landed": "2026-09-27 — `docs/writing-tests.md`",
         "summary": "Proposto: o caminho padrão é teste pytest em Python (AAA) chamando"
       },
       {
@@ -133,6 +135,7 @@
         "title": "Código em inglês, documentação em português",
         "status": "accepted",
         "date": "2026-09-27",
+        "landed": "2026-09-27 — `core/settings.py`, `README.md`",
         "summary": "Proposto: identificadores, nomes de arquivos, marcadores e mensagens de"
       },
       {
@@ -141,21 +144,55 @@
         "title": "Arquitetura Tri-Layer do ISTQB CTAL-TAE v2.0 com Page Object e Flow Model",
         "status": "accepted",
         "date": "2026-09-27",
+        "landed": "2026-09-27 — `tests/framework/test_layers.py`, `README.md`",
         "summary": "O template adota as três camadas do TAF do CTAL-TAE v2.0, com dependência"
       }
     ],
-    "changes": [
+    "changes": [],
+    "changes_archive": [
       {
         "id": "0001-walking-skeleton-tri-layer",
         "title": "walking skeleton tri-layer",
-        "path": ".doctrina/changes/0001-walking-skeleton-tri-layer",
-        "status": "proposed",
-        "opened": "2026-09-27",
+        "path": ".doctrina/changes/archive/2026-09-27-0001-walking-skeleton-tri-layer",
+        "status": "applied",
+        "applied": "2026-09-27",
+        "specs_affected": [
+          {
+            "capability": "ci-pipeline",
+            "operation": "MODIFIED"
+          },
+          {
+            "capability": "configuration",
+            "operation": "MODIFIED"
+          },
+          {
+            "capability": "example-sut",
+            "operation": "MODIFIED"
+          },
+          {
+            "capability": "execution-reporting",
+            "operation": "MODIFIED"
+          },
+          {
+            "capability": "project-structure",
+            "operation": "MODIFIED"
+          },
+          {
+            "capability": "test-authoring",
+            "operation": "MODIFIED"
+          }
+        ],
         "lane": "runtime (confident; signals: ci, configuracao) — opened anyway (--force)"
       }
     ],
-    "changes_archive": [],
-    "skills": [],
+    "skills": [
+      {
+        "id": "pytester-playwright-subprocess",
+        "path": ".doctrina/skills/pytester-playwright-subprocess.md",
+        "description": "Run a Playwright UI test inside pytester without losing the installed browsers.",
+        "last_updated": "2026-09-27"
+      }
+    ],
     "contracts": [],
     "entrypoint": {
       "path": "AGENTS.md"

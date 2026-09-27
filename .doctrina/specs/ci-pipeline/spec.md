@@ -1,12 +1,12 @@
 # Spec — ci-pipeline
 
 **Capability:** ci-pipeline
-**Status:** draft
-**Implementation:** planned
+**Status:** active
+**Implementation:** verified — GitHub Actions runs 36293277897 (red, artifacts uploaded) and 36293369635 (green) (`.github/workflows/tests.yml`)
 **Realizes:** SC5, SC4
 **Depends on:** execution-reporting, configuration
 **Last updated:** 2026-09-27
-**Version:** 0.1.0
+**Version:** 0.2.0
 
 ## Purpose
 
@@ -17,7 +17,7 @@ Ship a working CI workflow that installs the template, runs the architecture che
 ### Ubiquitous
 
 - The template shall include a GitHub Actions workflow that runs on every push and pull request.
-- The workflow shall run lint, architecture checks and the example suite, in that order.
+- The workflow shall run a secret scan, lint, the template's framework checks and the example suite, in that order.
 - The workflow shall use currently supported action major versions and a supported Python version.
 
 ### Event-driven
@@ -35,8 +35,8 @@ Ship a working CI workflow that installs the template, runs the architecture che
 
 ## Acceptance criteria
 
-1. [unverified] The workflow run on the default branch is green — verified by `.github/workflows/tests.yml`.
-2. [unverified] A failing test makes the workflow job fail and still uploads artifacts/ — verified by `.github/workflows/tests.yml`.
+1. [verified] The workflow runs green on push; observed on the change branch in run 36293369635 — verified by `.github/workflows/tests.yml`.
+2. [verified] A failing test makes the workflow job fail and still uploads artifacts/; observed in run 36293277897 — verified by `.github/workflows/tests.yml`.
 
 ## Maturity
 

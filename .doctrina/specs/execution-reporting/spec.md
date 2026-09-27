@@ -1,12 +1,12 @@
 # Spec — execution-reporting
 
 **Capability:** execution-reporting
-**Status:** draft
-**Implementation:** planned
+**Status:** active
+**Implementation:** verified — pytest addopts (`pyproject.toml`)
 **Realizes:** SC1, SC6
 **Depends on:** configuration, project-structure
 **Last updated:** 2026-09-27
-**Version:** 0.1.0
+**Version:** 0.2.0
 
 ## Purpose
 
@@ -40,9 +40,10 @@ Run the suite with one command, select subsets by marker, and turn every failure
 
 ## Acceptance criteria
 
-1. [unverified] A deliberately failing example test leaves a screenshot and a trace under artifacts/ — verified by `tests/e2e/test_evidence.py`.
-2. [unverified] A run writes artifacts/junit.xml and artifacts/report.html — verified by `.github/workflows/tests.yml`.
-3. [unverified] An unknown marker makes the run fail at collection — verified by `tests/unit/test_markers.py`.
+1. [verified] A deliberately failing UI test leaves a screenshot and a trace in the output folder — verified by `tests/framework/test_evidence.py`.
+2. [verified] A run writes junit.xml and report.html with the configured report options — verified by `tests/framework/test_reports.py`.
+3. [verified] An unknown marker makes the run fail at collection — verified by `tests/framework/test_markers.py`.
+4. [verified] A run that collects zero tests exits non-zero — verified by `tests/framework/test_reports.py`.
 
 ## Maturity
 

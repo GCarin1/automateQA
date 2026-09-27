@@ -6,7 +6,7 @@
 - **Supersedes:** —
 - **Superseded by:** —
 - **Evidence:** n/a — nenhuma implementação ainda; o change do walking skeleton será citado via `doctrina decision land`
-- **Landed:** —
+- **Landed:** 2026-09-27 — `tests/framework/test_layers.py`, `README.md`
 
 ## Context
 
